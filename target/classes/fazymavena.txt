@@ -9,3 +9,4 @@ Fazy cyklu budowania projektu w Mavenie
 
 Fazy cyklu są od siebie zależne mvn package wykona wszystkie poprzednie fazy tj.
 compile i test
+test

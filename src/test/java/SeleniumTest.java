@@ -7,8 +7,10 @@ public class SeleniumTest {
         WebDriver driver = new FirefoxDriver();
     }
 
+
+    //dzięki temu możemy uruchomić funkcję przyciskiem "play"
     @Test
     public void sampleTest(){
-        System.out.println("Hello!");
+        System.out.println("Hello! ");
     }
 }
