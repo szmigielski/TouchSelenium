@@ -1,0 +1,11 @@
+Fazy cyklu budowania projektu w Mavenie
+
+- mvn compile - kompiluje kod źródłowy
+- opcjonalne mvn clean
+- mvn test - uruchamia testy
+- mvn package - pakuje skompilowany kod do np. jara
+- mvn install - instalacja paczki do naszego lokalnego repozytorium
+
+
+Fazy cyklu są od siebie zależne mvn package wykona wszystkie poprzednie fazy tj.
+compile i test
