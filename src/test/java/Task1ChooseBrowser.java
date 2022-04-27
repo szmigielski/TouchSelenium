@@ -2,7 +2,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -38,6 +37,7 @@ public class Task1ChooseBrowser {
 
     }
 
+
     public WebDriver getDriver (String browser){ //klasa WebDriver metoda utworzona getDriver
         switch (browser){
             case "chrome":
@@ -54,3 +54,4 @@ public class Task1ChooseBrowser {
         }
     }
 }
+
