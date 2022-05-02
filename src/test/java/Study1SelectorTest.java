@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class Study1SelectorTest {
-
+//w konsoli webowej $$("")
     @Test
     public void webDriverSetup(){
         WebDriverManager.chromedriver().setup();
@@ -57,7 +57,6 @@ public class Study1SelectorTest {
         By paragraph = By.className("topSecret");
         driver.findElement(paragraph);
     }
-
 
 
     @Test
@@ -165,11 +164,6 @@ public class Study1SelectorTest {
         driver.findElement(firstChild);
         driver.findElement(lastChild);
         driver.findElement(thirdChild);
-
-
-
-
-
 
     }
 
