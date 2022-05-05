@@ -75,8 +75,11 @@ public class MyStudy1Millennium {
         System.out.println(driver.getWindowHandle());
         System.out.println(driver.getCurrentUrl());
 
-        
 
+
+        /*By findCoutry = By.cssSelector("#inpae6a6d03-bac7-4dd9-9e97-04803e326696");
+        WebElement clickCountry = driver.findElement(findCoutry);
+        clickCountry.click();*/
 
 
 
