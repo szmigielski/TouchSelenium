@@ -16,39 +16,28 @@ public class Study2XpathTest {
         //szukamy wszystkich tagów button $x("//button")
         driver.manage().window().maximize();
         By fullPath = By.xpath("/html/body/div/ul"); //dokładna ścieżka
-    
-
         By shortPath = By.xpath("//ul"); //wszystkie ul na stronie
-
-
         By buttonId = By.xpath("/html/body/button[@id='clickOnMe']"); // lub //button[@id='clickOnMe']
-
-
         By firstName = By.xpath("//input[@name='fname']");
-
         By paraHidden = By.xpath("//p[@class='topSecret']");
-
-
         By linkText = By.xpath("//a[text()='Visit W3Schools.com!']"); //wyszukiwanie elementów po tekście
-
-
         By partialLink = By.xpath("//a[contains(text(), 'Visit')]"); //szukamy tagów a, które zawierają text Visit
-
-
         By allXpath = By.xpath("//*");
-
-
         By secondElement = By.xpath("(//input)[2]");
-
         By lastElement = By.xpath("(//input)[last()]");
-
         By elementWithAttr = By.xpath("//*[@name]"); //dowolny element w całej strukturze, który zawiera attr name
-
-
         By startsWith = By.xpath("//*[starts-with(@name, 'user')]"); //wartosc atrybutu name rozpoczyna sie od user
         By attrEq = By.xpath("//button[@id='clickOnMe']"); //szukamy buttona dla którego wartość atr id = clickOnMe
         By attrNotEq = By.xpath("//*[@id!='clickOnMe']");
         By attrCont = By.xpath("//*[contains(@name, 'ame')]"); //dowolny element, którego wartość atr name zawiera 'ame'
+        By divsAndLiks = By.xpath("//a | //div"); //szukamy wszystkie tagi i divy
+        By andOperator = By.xpath("//input[@name='fname' and @id='fname']"); //szukamy wszystkie inputy o określonym name i id
+        By orOperator = By.xpath("//input[@name='fname' or @id='fname']");
+
+        driver.findElement(divsAndLiks);
+        driver.findElement(andOperator);
+        driver.findElement(orOperator);
+
 
 
 
