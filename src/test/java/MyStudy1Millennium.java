@@ -1,31 +1,23 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.bouncycastle.jcajce.provider.asymmetric.EC;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-import java.time.Duration;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 
 public class MyStudy1Millennium {
 
     @Test
-    public void millenniumTest(){
+    public void millenniumTest() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.bankmillennium.pl/");
         WebElement acceptCookie = driver.findElement(By.xpath("//*[@id='cookie-m-button-allow']"));
         acceptCookie.click();
-        Duration duration = Duration.ofSeconds(10);
-        WebDriverWait wait = new WebDriverWait(driver, duration);
 
         driver.manage().window().maximize();
 
@@ -75,11 +67,36 @@ public class MyStudy1Millennium {
         System.out.println(driver.getWindowHandle());
         System.out.println(driver.getCurrentUrl());
 
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//*[@id=\"keywordSearchDsk\"]")).sendKeys("Tester");
+        driver.findElement(By.xpath("//*[@id=\"locationSearchDsk\"]")).sendKeys("Wrocław");
+        driver.findElement(By.xpath("//*[@id=\"locationSearchDsk\"]")).sendKeys(Keys.ENTER);
+        Thread.sleep(5000);
+        By tester = By.xpath("//*[@id=\"cs-root\"]/div/div[1]/div[2]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div/div[3]/div/div/div/a");
+        driver.findElement(tester).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//button[@data-tag='applyNowButton']")).click();
+        Thread.sleep(5000);
+        By firstName = By.xpath("//*[@id='actionItem.firstName.idTag']");
+        driver.findElement(firstName).sendKeys("Damian");
+        By lastName = By.xpath("//*[@id=\"actionItem.lastName.idTag\"]");
+        driver.findElement(lastName).sendKeys("Szmigielski");
+        By mail = By.xpath("//*[@id=\"actionItem.email.idTag\"]");
+        driver.findElement(mail).sendKeys("damian.szmigielski.it@gmail.com");
+        By dateOfBirth = By.xpath("//input[@type='text']");
+        driver.findElement(dateOfBirth).sendKeys("23.12.1997");
+        By adress = By.xpath("//*[@id='contactDetails_addressLine1']");
+        driver.findElement(adress).sendKeys("ul. Gersona 8/23");
+        By country = By.xpath("//*[@id='contactDetails_city']");
+        driver.findElement(country).sendKeys("Wrocław");
+        By zipCode = By.xpath("//*[@id='contactDetails_zipCode']");
+        driver.findElement(zipCode).sendKeys("51-664");
+        By phoneContact = By.xpath("//*[@id='contactDetails_phone']");
+        driver.findElement(phoneContact).sendKeys("510545720");
 
 
-        /*By findCoutry = By.cssSelector("#inpae6a6d03-bac7-4dd9-9e97-04803e326696");
-        WebElement clickCountry = driver.findElement(findCoutry);
-        clickCountry.click();*/
+
+
 
 
 
